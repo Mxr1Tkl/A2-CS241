@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head>
+        <title>Register</title>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0, charset=UTF-8"/>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" th:href="@{/css/login.css}" type="text/css" />
+    </head>
+    <body>
+        <div class="glass-container">
+            <form th:action="@{/register}" th:object="${user}" method="post">
+                <div class="input-group">
+                    <input type="text" th:field="*{username}" required="required"/>
+                    <label>Username:</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" th:field="*{email}" required="required"/>
+                    <label>Email:</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" th:field="*{password}" required="required"/>
+                    <label>Password:</label>
+                </div>
+                
+                <button type="submit" class="login-btn">Register</button>
+                <div class="register-link">                    
+                    <p>Already have an account? <a th:href="@{/login}">Login here</a>.</p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div>
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" th:href="@{/home}">
+                    <img src="https://cdn.vectorstock.com/i/1000v/05/58/gmail-logo-icon-google-email-vector-50150558.jpg" 
+                        alt="Email Logo" width="38" height="30" class="rounded me-2"/>Circle_of_Knowledge@gmail.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" th:href="@{/home}">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" 
+                   alt="Instagram Logo" width="30" height="30" class="rounded me-2"/>@Knowledge_circle
+                </a>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-bold" th:href="@{/home}">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png" 
+                   alt="Logo" width="30" height="30" class="rounded me-2"/>@Knowledge_circle
+                    </a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" th:href="@{/home}">
+                    <img src="https://p7.hiclipart.com/preview/333/86/490/iphone-telephone-call-logo-email-awesome-vector.jpg" 
+                   alt="Logo" width="30" height="30" class="rounded me-2"/>+679 323 1000.
+                </a>
+            </li>
+          </ul>
+        </div><br/>
+
+          <p class="mb-0"> <strong>Wisdom of the past, guiding the future<br/>&copy;2025 Circle of Knowledge</strong></p><br/>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom Script -->
+        <script th:src="@{/js/script.js}"></script>
+    </body>
+</html>
